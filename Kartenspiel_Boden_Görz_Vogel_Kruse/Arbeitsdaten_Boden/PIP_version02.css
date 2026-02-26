@@ -1,0 +1,77 @@
+/* André Boden: Body Hintergrund */
+body{
+	background-color: black ;
+}
+
+header {
+	background-color: white ;
+	height: 10vh ;
+	font-size: xx-large ;
+}
+
+/* André Boden: Spielfeld untergliedert für die Positionen der Karten und ders Lebens */
+#Spielfeld{
+	display: grid;
+	grid-template-columns: 75px 4fr 1fr ;
+	grid-template-rows: auto auto auto auto auto auto ;
+	grid-template-areas:	'lebengegner gegner mana'
+							'lebengegner gegner mana'
+							'lebengegner feld  friedhof '
+							'leben feld  friedhof '
+							'leben feld deck'
+							'leben hand deck' ;
+	& > section#Deck {grid-area: deck;   margin: 2px;   border: solid 2px black; } 
+	& > section#Friedhof {grid-area: friedhof;   margin: 2px;   border: solid 2px black; } 
+	& > section#Mana {grid-area: mana;   margin: 2px;    border: solid 2px black;  } 
+	& > section#Gegnerkarten {grid-area: gegner;   margin: 2px;   border: solid 2px black; padding: 0 ;} 
+	& > section#Feldkarten {grid-area: feld;   margin: 2px;   border: solid 2px black; } 
+	& > section#Handkarten {grid-area: hand;   margin: 2px;    border: solid 2px black;  } 
+	& > section#Lebensbalken {grid-area: leben;   margin: 2px;    border: solid 2px black;  }
+	& > section#Gegnerbalken {grid-area: lebengegner;   margin: 2px;    border: solid 2px black;  }
+
+/*Justin Görtz Vorlage, André Boden leicht umgeändert*/
+	width: 96vw ;
+	height: 96vh ;
+	margin: 0 auto ;
+	border: solid ;
+	border-color: violett ; 
+	background-image: linear-gradient(to bottom right, #57cedb 0%, #feaa00 100%) ;		
+}
+
+/* André Boden: Einzelne Sektion nochmals untergliedert für das legen der Karten */
+section#Gegnerkarten {
+	display: grid ;
+	grid-template-columns: 2fr 2fr 2fr 2fr 2fr ;
+	grid-template-areas: 'gegner01 gegner02 gegner03 gegner04 gegner05' ;
+	
+	& > img#Odin01 { grid-area: gegner01;  width: 100% ; height: 100% ; }
+	& > img#Odin02 { grid-area: gegner02;  width: 100% ; height: 100% ; }
+	& > img#Odin03 { grid-area: gegner03;  width: 100% ; height: 100% ; }
+	& > img#Odin04 { grid-area: gegner04;  width: 100% ; height: 100% ; }
+	& > img#Odin05 { grid-area: gegner05;  width: 100% ; height: 100% ; }	
+}
+
+section#Feldkarten {
+	display: grid ;
+	grid-template-columns: 2fr 2fr 2fr 2fr 2fr ;
+	grid-template-areas: 'feld01 feld02 feld03 feld04 feld05' ;
+	
+	& > img#Odin06 { grid-area: feld01;  width: 100% ; height: 100% ; }
+	& > img#Odin07 { grid-area: feld02;  width: 100% ; height: 100% ; }
+	& > img#Odin08 { grid-area: feld03;  width: 100% ; height: 100% ; }
+	& > img#Odin09 { grid-area: feld04;  width: 100% ; height: 100% ; }
+	& > img#Odin1 { grid-area: feld05;  width: 100% ; height: 100% ; }	
+}
+
+section#Handkarten {
+	display: grid ;
+	grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr;
+	grid-template-areas: 'hand01 hand02 hand03 hand04 hand05 hand06' ;
+	
+	& > img#Odin11 { grid-area: hand01;  width: 100% ; height: 100% ; }
+	& > img#Odin12 { grid-area: hand02;  width: 100% ; height: 100% ; }
+	& > img#Odin13 { grid-area: hand03;  width: 100% ; height: 100% ; }
+	& > img#Odin14 { grid-area: hand04;  width: 100% ; height: 100% ; }
+	& > img#Odin15 { grid-area: hand05;  width: 100% ; height: 100% ; }
+	& > img#Odin16 { grid-area: hand06;  width: 100% ; height: 100% ; }
+
