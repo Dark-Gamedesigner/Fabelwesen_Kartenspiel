@@ -1,24 +1,42 @@
 // made by Tim Vogel
 //JS dokument fuer klassenstruktur des PIP projekts TCG
+var Mana = null;
+var Attack = null;
+var Hitpoints = null;
+var AktionNr = null;
+var PassivNr = null;
+var SpezialNr = null;
 
 class Karten {
-	constructor (ManaKosten);
+	constructor (Manakosten, HP) {
+		this.Manakosten = Mana;
+		this.HP = Hitpoints;
+	}
 }
 
 class Angriffskarte extends Karten {
-	constructor (Manakosten, Atk, HP);
+	constructor (Manakosten, Atk, HP) {
+		this.Atk = Attack;
+	}
 }
 
 class Aktionskarte extends Karten {
-	constructor (Manakosten, HP, Aktionseffekt);
+	constructor (Manakosten, HP, Aktionseffekt) {
+		this.Aktionseffekt = AktionNr;
+	}
 }
 
 class Unterstützerkarte extends Karten {
-	(constructor (Manakosten, HP, Feldeffekt);
+	(constructor (Manakosten, HP, Feldeffekt) {
+		this.Feldeffekt = PassivNr;
+	}
 }
 
 class Götterkarte extends Karten {
-	constructor (Manakosten, Atk, HP, Effekt);
+	constructor (Manakosten, Atk, HP, Sondereffekt) {
+		this.Atk = Attack;
+		this.Sondereffekt = SpezialNr;
+	}
 }
 
 var Zerberus = new Angriffskarte (4, 5, 10);
