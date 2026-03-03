@@ -15,15 +15,15 @@ class Karten {
 }
 
 class Angriffskarte extends Karten {
-	super (Manakosten, HP);
-	constructor (Atk) {
+	constructor (Manakosten, HP, Atk) {
+		super (Manakosten, HP);
 		this.Atk = Attack;
 	}
 }
 
 class Aktionskarte extends Karten {
-	super (Manakosten, HP);
-	constructor (Aktionseffekt) {
+	constructor (Manakosten, HP, Aktionseffekt) {
+		super (Manakosten, HP);
 		this.Aktionseffekt = AktionNr;
 	}
 }
@@ -35,8 +35,8 @@ class Aktionskarte extends Karten {
 }*/
 
 class Götterkarte extends Karten {
-	super (Manakosten, HP);
-	constructor (Atk, Sondereffekt) {
+	constructor (Manakosten, HP, Atk, Sondereffekt) {
+		super (Manakosten, HP);
 		this.Atk = Attack;
 		this.Sondereffekt = SpezialNr;
 	}
