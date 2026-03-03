@@ -4,7 +4,7 @@ var Mana = null;
 var Attack = null;
 var Hitpoints = null;
 var AktionNr = null;
-var PassivNr = null;
+//var PassivNr = null;
 var SpezialNr = null;
 
 class Karten {
@@ -15,25 +15,28 @@ class Karten {
 }
 
 class Angriffskarte extends Karten {
-	constructor (Manakosten, Atk, HP) {
+	super (Manakosten, HP);
+	constructor (Atk) {
 		this.Atk = Attack;
 	}
 }
 
 class Aktionskarte extends Karten {
-	constructor (Manakosten, HP, Aktionseffekt) {
+	super (Manakosten, HP);
+	constructor (Aktionseffekt) {
 		this.Aktionseffekt = AktionNr;
 	}
 }
 
-class Unterstützerkarte extends Karten {
+/*class Unterstützerkarte extends Karten {
 	constructor (Manakosten, HP, Feldeffekt) {
 		this.Feldeffekt = PassivNr;
 	}
-}
+}*/
 
 class Götterkarte extends Karten {
-	constructor (Manakosten, Atk, HP, Sondereffekt) {
+	super (Manakosten, HP);
+	constructor (Atk, Sondereffekt) {
 		this.Atk = Attack;
 		this.Sondereffekt = SpezialNr;
 	}
