@@ -27,7 +27,7 @@ class Aktionskarte extends Karten {
 }
 
 class Unterstützerkarte extends Karten {
-	(constructor (Manakosten, HP, Feldeffekt) {
+	constructor (Manakosten, HP, Feldeffekt) {
 		this.Feldeffekt = PassivNr;
 	}
 }
@@ -47,6 +47,6 @@ var Zeus = new Götterkarte (x,y,z,q);
 
 var Hades = new Götterkarte (q,z,y,x);
 
-var Äpfel der Hesperiden = new Unterstützerkarte (a,b,c);
+var ÄpfelDerHesperiden = new Unterstützerkarte (a,b,c);
 
-var Orakel von Delphi = new Aktionskarte (f,m,l);
+var OrakelVonDelphi = new Aktionskarte (f,m,l);
