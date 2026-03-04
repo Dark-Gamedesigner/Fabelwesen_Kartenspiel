@@ -1,3 +1,4 @@
+/* Made by Justin Görtz */
 #Spielfeld{
 	width: 66vw ;
 	height: 74vh ;
@@ -5,4 +6,5 @@
 	border: solid ;
 	border-color: red ; 
 	background-color: green ; 
+
 }
