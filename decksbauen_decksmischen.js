@@ -1,6 +1,5 @@
 //---------------------------------------------------------------------------------
-// Made from Justin Görtz
-// Debugging durch Chatgpt
+// Made by Justin Görtz
 'use strict'
 let deck1 ;
 let deck2 ;
@@ -24,7 +23,6 @@ function baueDeck1() {
 		for(let i = 0; i < Playerone.length; i++) {
 			deck1.push(Playerone[i]) ;
 		}
-		console.log(deck1) ;
 }
 
 
@@ -39,7 +37,6 @@ function baueDeck2() {
 		for(let i = 0; i < Playertwo.length; i++) {
 			deck2.push(Playertwo[i]) ;
 		}
-		console.log(deck2) ;
 }
 
 function mischeDeck1() {
@@ -49,7 +46,6 @@ function mischeDeck1() {
 		deck1[i] = deck1[j] ;
 		deck1[j] = temp ;
 	}
-	console.log(deck1) ;
 }
 
 function mischeDeck2() {
@@ -59,7 +55,6 @@ function mischeDeck2() {
 		deck2[i] = deck2[j] ;
 		deck2[j] = temp ;
 	}
-	console.log(deck2) ;
 }
 // TODO ist nicht ganz fertig
 //function austeilen(karten, Spielfeld) {
@@ -71,4 +66,5 @@ function mischeDeck2() {
 //	}
 //}
 //---------------------------------------------------------------------------------
+
 
