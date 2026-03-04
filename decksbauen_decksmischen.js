@@ -17,7 +17,7 @@ window.onload = function() {
 // Nordisches Array
 function baueDeck1() {
 	let Playerone = ['Odin' , 'Thor' , 'Frigg' , 'Hel' , 'Freya' , 'Skadi' , 'Loki' , 
-					'Jack o Lantern' , 'Pixi' , 'Hochpixi' , 'Jackfrost' , 'Kelpie' , 'Werewolf' , 'Zyklop' , 'Valkyre' , 'Typhon' , 'Pegasus' , 
+					'Jack o Lantern' , 'Pixi' , 'Hochpixi' , 'Jackfrost' , 'Kelpie' , 'Werewolf' , 'Zyklop' , 'Valkyre' , 'Ratatoskr' , 'Pegasus' , 
 					'Hydra' , 'Zentaure' , 'Minotaure' , 'Sphinx' , 'Chimäre' , 'Greif' , 'Unicorn' , 'Harpies' , 'Ceberus' , 
 					'Gungir' , 'Gleipnir' , 'Dreizack des Poseidon' , 'Medusa' , 'Aigis' , 'Mjölnir']
 	deck1 = [] ;
@@ -32,7 +32,7 @@ function baueDeck1() {
 // Griechisches  Array
 function baueDeck2() {
 	let Playertwo = ['Zeus' , 'Baldur' , 'Hera' , 'Hades' , 'Aphrodite' , 'Artemis' , 'Hermes' ,
-					'Jack o Lantern' , 'Pixi' , 'Hochpixi' , 'Jackfrost' , 'Kelpie' , 'Werewolf' , 'Zyklop' , 'Valkyre' , 'Typhon' , 'Pegasus' , 
+					'Jack o Lantern' , 'Pixi' , 'Hochpixi' , 'Jackfrost' , 'Kelpie' , 'Werewolf' , 'Zyklop' , 'Valkyre' , 'Ratatoskr' , 'Pegasus' , 
 					'Hydra' , 'Zentaure' , 'Minotaure' , 'Sphinx' , 'Chimäre' , 'Greif' , 'Unicorn' , 'Harpies' , 'Ceberus' , 
 					'Gungir' , 'Gleipnir' , 'Dreizack des Poseidon' , 'Medusa' , 'Aigis' , 'Mjölnir']
 	deck2 = [] ;
@@ -71,3 +71,4 @@ function mischeDeck2() {
 //	}
 //}
 //---------------------------------------------------------------------------------
+
