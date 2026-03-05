@@ -63,7 +63,7 @@ section#Lebensbalken {
 	& > img#Odin09 { grid-area: feld04;   width: 70% ; height: 65% ;    padding: 10px ; margin: 4px ;    border: solid 2px black ;}
 	& > img#Odin1  { grid-area: feld05;   width: 70% ; height: 65% ;    padding: 10px ; margin: 4px ;    border: solid 2px black ;}	
 }
-/* --- Bearbeitet von Kruse --- */
+/* --- Bearbeitet von Kruse > --- */
 section#Handkarten {
 	display: grid ;
 	grid-template-columns: 2fr 2fr 2fr 2fr 2fr 2fr ;
@@ -75,7 +75,7 @@ section#Handkarten > img {
 	width: 100% ;
 	height: auto ;
 }
-/* --- Bearbeitet von Kruse --- */
+/* --- < Bearbeitet von Kruse --- */
 section#Gegnerkarten {
 	display: flex ;
 	justify-content: center ;
