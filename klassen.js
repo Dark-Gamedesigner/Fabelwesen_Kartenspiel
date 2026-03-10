@@ -1,127 +1,85 @@
+'use strict' ;
 // made by Tim Vogel
 //JS dokument fuer klassenstruktur des PIP projekts TCG
-'use strict';
+var Mana = null;
+var Attack = null;
+var Hitpoints = null;
+var AktionNr = null;
+//var PassivNr = null;
+var SpezialNr = null;
 
-class Karte {
-	Manakosten = null;
-	Hitpoints = null;
-	constructor (Mana, HP) {
-		this.Manakosten = Mana;
-		this.Hitpoints = HP;
+class Karten {
+	constructor (Manakosten, Hitpoints) {
+		this.Mana = Manakosten;
+		this.HP = Hitpoints;
 	}
 }
 
-class Angriffskarte extends Karte {
-	Attack = null;
-	constructor (Mana, HP, Atk) {
-		super (Mana, HP);
-		this.Attack = Atk;
+class Angriffskarte extends Karten {
+	constructor (Manakosten, Attack, Hitpoints) {
+		super (Manakosten, Hitpoints);
+		this.Atk = Attack;
 	}
 }
 
-/*class Aktionskarte extends Karten {
-	Aktionseffekt = null;
-	constructor (Manakosten, HP, AktionNr) {
-		super (Manakosten, HP);
+class Aktionskarte extends Karten {
+	constructor (Manakosten, Hitpoints, Aktionseffekt) {
+		super (Manakosten, Hitpoints);
 		this.Aktionseffekt = AktionNr;
 	}
-}*/
+}
 
-/*class Unterstützerkarte extends Karten {
-	Feldeffekt = null;
-	constructor (Manakosten, HP, PassivNr) {
-		super (Manakosten, HP);
+/*class Unterstuetzerkarte extends Karten {
+	constructor (Manakosten, HP, Feldeffekt) {
 		this.Feldeffekt = PassivNr;
 	}
 }*/
 
-class Götterkarte extends Angriffskarte {
-	Sondereffekt = null;
-	constructor (Mana, HP, Atk, SpezialNr) {
-		super (Mana, HP, Atk);
+class Goetterkarte extends Karten {
+	constructor (Manakosten, HP, Atk, Sondereffekt) {
+		super (Manakosten, HP);
+		this.Atk = Attack;
 		this.Sondereffekt = SpezialNr;
 	}
 }
 
-// ---------- Angriffskarte ----------
-var Zerberus = new Angriffskarte (4, 5, 10);
+var Zerberus = new Angriffskarte(4, 10, 5 );
 
-var Minotaurus = new Angriffskarte (2, 3, 7);
-// erweitert by Kruse >
-var JackOLantern = new Angriffskarte (0, 0, 0);
+var Minotaurus = new Angriffskarte(2, 7, 3 );
 
-var Pixi = new Angriffskarte (0, 0, 0);
+var Zeus = new Goetterkarte ();
 
-var Hochpixi = new Angriffskarte (0, 0, 0);
+var Hades = new Goetterkarte ();
 
-var Kelpie = new Angriffskarte (0, 0, 0);
+//var AepfelDerHesperiden = new Unterstuetzerkarte ();
 
-var Werewolf = new Angriffskarte (0, 0, 0);
+var OrakelVonDelphi = new Aktionskarte ();
 
-var Zyklop = new Angriffskarte (0, 0, 0);
+//geschrieben von André Boden 
 
-var Valkyre = new Angriffskarte (0, 0, 0);
+var LP = 20 ;
+var schaden = null ;
+// Schaden tracken
+function angriff() { 
+	console.log('angriff') ;
+	if(true) {	
+		var karte = document.createElement('img') ;
+		karte.src='Odin_fertig_update.png' ;
+		karte.className = 'dummy' ;
+		document.getElementById('Gegnerkarten').appendChild(karte) ;
+		 console.log('karte') ;
+		document.getElementById('Feldkarten').appendChild(karte) ;
+		 console.log('karte') ;
+			schaden = Minotaurus.Atk - Zerberus.HP;			
+	}
+	return() ;	
+}
+window.addEventListener('load', angriff) ;
 
-var Pegasus = new Angriffskarte (0, 0, 0);
 
-var Hydra = new Angriffskarte (0, 0, 0);
-
-var Zentaure = new Angriffskarte (0, 0, 0);
-
-var Minotaure = new Angriffskarte (0, 0, 0);
-
-var Sphinx = new Angriffskarte (0, 0, 0);
-
-var Chimäre = new Angriffskarte (0, 0, 0);
-
-var Typhon = new Angriffskarte (0, 0, 0);
-
-var Greif = new Angriffskarte (0, 0, 0);
-
-var Unicorn = new Angriffskarte (0, 0, 0);
-
-var Harpies = new Angriffskarte (0, 0, 0);
-
-var Ceberus = new Angriffskarte (0, 0, 0);
-
-var Ratatoskr = new Angriffskarte (0, 0, 0);
-// erweitert by Kruse <
-
-// ---------- Götterkarte ----------
-var Zeus = new Götterkarte (0,0,0,0);
-
-var Hades = new Götterkarte (0,0,0,0);
-// erweitert by Kruse >
-var Odin = new Götterkarte (0,0,0,0);
-
-var Thor = new Götterkarte (0,0,0,0);
-
-var Frigg = new Götterkarte (0,0,0,0);
-
-var Hel = new Götterkarte (0,0,0,0);
-
-var Freya = new Götterkarte (0,0,0,0);
-
-var Skadi = new Götterkarte (0,0,0,0);
-
-var Loki = new Götterkarte (0,0,0,0);
-// erweitert by Kruse <
-
-// ---------- Unterstützerkarte ----------
-// var ÄpfelDerHesperiden = new Unterstützerkarte (a,b,c);
-
-// ---------- Aktionskarte ----------
-//var OrakelVonDelphi = new Aktionskarte (f,m,l);
-// erweitert by Kruse >
-//var Gungir = new Aktionskarte (f,m,l);
-
-//var Gleipnir = new Aktionskarte (f,m,l);
-
-//var DreizackDesPoseidon = new Aktionskarte (f,m,l);
-
-//var Medusa = new Aktionskarte (f,m,l);
-
-//var Aigis = new Aktionskarte (f,m,l);
-
-//var Mjölnir = new Aktionskarte (f,m,l);
-// erweitert by Kruse <
+/*function aktualisieren() {
+	if() {
+		lpabzug()
+	}
+	
+}*/
