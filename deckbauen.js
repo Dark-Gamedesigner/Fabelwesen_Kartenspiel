@@ -63,15 +63,7 @@ function mischeDeck2() {
 		deck2[j] = temp ;
 	}
 }
-// TODO ist nicht ganz fertig
-//function austeilen(karten, Spielfeld) {
-//	for(let motiv of karten) {
-//		let bild = document.createElement('img') ;
-//		bild.src = 'media/bilder/back.png' ;
-//		bild.alt = motiv ;
-//		Spielfeld.appendChild(bild) ;
-//	}
-//}
+
 //---------------------------------------------------------------------------------
 
 /* ---- von Kruse > ----*/
@@ -101,4 +93,5 @@ function seeHand( hand, feld ) {
 	}						
 }
 /* ---- < von Kruse ----*/
+
 
