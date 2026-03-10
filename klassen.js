@@ -64,22 +64,14 @@ function angriff() {
 	console.log('angriff') ;
 	if(true) {	
 		var karte = document.createElement('img') ;
+		var karte = document.createElement('img') ;
 		karte.src='Odin_fertig_update.png' ;
 		karte.className = 'dummy' ;
 		document.getElementById('Gegnerkarten').appendChild(karte) ;
 		 console.log('karte') ;
 		document.getElementById('Feldkarten').appendChild(karte) ;
 		 console.log('karte') ;
-			schaden = Minotaurus.Atk - Zerberus.HP;			
-	}
-	return() ;	
+			schaden = Minotaurus.atk - Zerberus.HP;			
+	}	
 }
 window.addEventListener('load', angriff) ;
-
-
-/*function aktualisieren() {
-	if() {
-		lpabzug()
-	}
-	
-}*/

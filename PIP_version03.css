@@ -63,3 +63,9 @@ button {
 		margin: 4px ;
 		border: dotted 3px red ;
 }
+
+.picture {
+	width: 40% ;
+	height: 30% ;
+	margin: 2px ;
+}
