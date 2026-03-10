@@ -10,7 +10,6 @@ window.onload = function() {
 		baueDeck2() ;
 		mischeDeck1() ;
 		mischeDeck2() ;
-		//austeilen() ;
 		/* ---- von Kruse > ----*/
 		handStart1()
 		handStart2()
@@ -93,5 +92,6 @@ function seeHand( hand, feld ) {
 	}						
 }
 /* ---- < von Kruse ----*/
+
 
 
