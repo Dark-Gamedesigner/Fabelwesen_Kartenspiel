@@ -85,10 +85,10 @@ function Turn() {
 		if (Hand < 8) {
 			//draw();//zu finden in deckbauen.js (auskommentiert zum testen des codes, weil website in endlosschleife hängt (draw fuktion noch nicht angepasst)
 		}
-		document.getElementById('Zug beenden').addEventListener('click', TurnSkip);
+		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer1 === true) {
 			//karten auf spielfeld ablegen (to do)
-			if (isFirstTurn === false) {
+			if (FirstTurnPlayer1 === false) {
 				//Angriff();
 				document.getElementById('Angreifen').addEventListener('click', Angriff);
 			}
@@ -106,10 +106,10 @@ function Turn() {
 		if (Hand < 8) {
 			//draw();//zu finden in deckbauen.js (auskommentiert zum testen des codes, weil website in endlosschleife hängt (draw fuktion noch nicht angepasst)
 		}
-		document.getElementById('Zug beenden').addEventListener('click', TurnSkip);
+		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer2 === true) {
 			//karten auf spielfeld ablegen (to do)
-			if (isFirstTurn === false) {
+			if (FirstTurnPlayer2 === false) {
 				//Angriff();
 				document.getElementById('Angreifen').addEventListener('click', Angriff);
 			}
