@@ -20,13 +20,13 @@ class Angriffskarte extends Karte {
 	}
 }
 
-/*class Aktionskarte extends Karten {
+class Aktionskarte extends Karte {
 	Aktionseffekt = null;
 	constructor (Manakosten, HP, AktionNr) {
 		super (Manakosten, HP);
 		this.Aktionseffekt = AktionNr;
 	}
-}*/
+}
 
 /*class Unterstützerkarte extends Karten {
 	Feldeffekt = null;
@@ -86,7 +86,21 @@ var Ratatoskr = new Angriffskarte (0, 0, 0);
 
 // ---------- Götterkarte ----------
 var Zeus = new Götterkarte (0,0,0,0);
+// erweitert by Justin G.
+var Thor = new Angriffskarte (4, 5, 10);
 
+var Skadi = new Angriffskarte (4, 5, 10);
+
+var Poseidon = new Angriffskarte (4, 5, 10);
+
+var Hera = new Angriffskarte (4, 5, 10);
+
+var Aphrodite = new Angriffskarte (4, 5, 10);
+
+var Artemis = new Angriffskarte (4, 5, 10);
+
+var Hermes = new Angriffskarte (4, 5, 10);
+// erweitert by Justin G.
 var Hades = new Götterkarte (0,0,0,0);
 // erweitert by Kruse >
 var Odin = new Götterkarte (0,0,0,0);
@@ -106,24 +120,18 @@ var Loki = new Götterkarte (0,0,0,0);
 // ---------- Aktionskarte ----------
 //var OrakelVonDelphi = new Aktionskarte (f,m,l);
 // erweitert by Kruse >
-//var Gungir = new Aktionskarte (f,m,l);
+var Gungir = new Aktionskarte (0,0,0);
 
-//var Gleipnir = new Aktionskarte (f,m,l);
+var Gleipnir = new Aktionskarte (0,0,0);
 
-//var DreizackDesPoseidon = new Aktionskarte (f,m,l);
+var Dreizack = new Aktionskarte (0,0,0);
 
-//var Medusa = new Aktionskarte (f,m,l);
+var Medusa = new Aktionskarte (0,0,0);
 
-//var Aigis = new Aktionskarte (f,m,l);
+var Aigis = new Aktionskarte (0,0,0);
 
-//var Mjölnir = new Aktionskarte (f,m,l);
+var Mjölnir = new Aktionskarte (0,0,0);
 // erweitert by Kruse <
 
 
-// Test by Justin Görtz
-	class Ruecken{
-	let karten_ruecken = document.createElement('img') ;
-	karten_ruecken.src='../pictures/Karten_Ruecken.png' alt='hier sollte ein bild sein'>
-	document.getElementById('Deck').appendChild(karten_ruecken) ;
-	console.log('karten_ruecken') ;
-	}
+
