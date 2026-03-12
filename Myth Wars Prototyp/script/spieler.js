@@ -16,7 +16,7 @@ class Spieler {
 	}
 }
 
-var spieler01 = new Spieler(0, 0, 0, 0) ;
-var spieler02 = new Spieler(0, 0, 0, 0) ;
+var spieler01 = new Spieler(0, 0, 0, 0, 0) ;
+var spieler02 = new Spieler(0, 0, 0, 0, 0) ;
 
 //------------------------------
