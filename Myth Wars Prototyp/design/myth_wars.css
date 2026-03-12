@@ -8,34 +8,19 @@ body{
 	& > header 	{ grid-area: kopf ; }
 	& > main 	{ grid-area: haupt ; }
 	& > aside 	{ grid-area: menu ; }
-	/*background-color: white ; auskommentiert von Justin G.*/ 
-	height: 100vh ;
-	width: 100vw ;
-	
-		/*Justin Görtz Vorlage, André Boden leicht umgeändert*/
-		width: 96vw ;
-		height: 96vh ;
-		margin: 0 ;
-	/*	border: solid ;
-		border-color: violett ; auskommentiert von Justin G. weil es nicht mehr nötig ist*/
-		background-color: #222288 ;
-		background-image: url('../pictures/Background_dunkel.png'); /* alte hintergrund einstellung! linear-gradient(to bottom right, #57cedb 0%, #feaa00 100%) ; */
-		background-repeat: no-repeat ;
-		background-position: cover ;
-		background-attachment: fixed ;
-		background-clip: padding-box ;
-		background-size: cover ;
+	background-color: white ;
+	min-height: 100vh ;
+	min-width: 100vw ;
 }
 
 header{
-	/*background-color: white ; auskommentiert von Justin G. background-color für die gesamt seite wird von zeile 21/22 übernommen
+	background-color: white ;
 	height: 4vh ;
-	font-size: xx-large ;*/
+	font-size: xx-large ;
 }
 
 body >  #Spielfeld{
 		display: grid;
-		color: white ;
 		grid-template-columns: 4fr 1fr 1fr ;
 		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr ;
 		grid-template-areas:	'bankgegner angreifergegner mana'
@@ -44,20 +29,27 @@ body >  #Spielfeld{
 								'bankfeld angreiferfeld friedhof'
 								'bankfeld angreiferfeld deck'
 								'hand hand deck' ;
-		& > section#Deck {grid-area: deck;   margin: 2px;   border: solid 2px white; } 
-		& > section#Friedhof {grid-area: friedhof;   margin: 2px;   border: solid 2px white; } 
-		& > section#Mana {grid-area: mana;   margin: 2px;    border: solid 2px white; } 
-		& > section#AngriffPlayer02 {grid-area: angreifergegner;   margin: 2px;  border: solid 2px white; padding: 0 ;} 
-		& > section#AngriffPlayer01 {grid-area: angreiferfeld;   margin: 2px;   border: solid 2px white; } 
-		& > section#Handkarten {grid-area: hand;   margin: 2px;    border: solid 2px white; } 
-		& > section#FeldPlayer01 {grid-area: bankfeld;   margin: 2px;    border: solid 2px white; }
-		& > section#FeldPlayer02 {grid-area: bankgegner;   margin: 2px;    border: solid 2px white; }
-
+		& > section#Deck {grid-area: deck;   margin: 2px;   border: solid 2px black; } 
+		& > section#Friedhof {grid-area: friedhof;   margin: 2px;   border: solid 2px black; } 
+		& > section#Mana {grid-area: mana;   margin: 2px;    border: solid 2px black; } 
+		& > section#Gegnerkarten {grid-area: angreifergegner;   margin: 2px;  border: solid 2px black; padding: 0 ;} 
+		& > section#Feldkarten {grid-area: angreiferfeld;   margin: 2px;   border: solid 2px black; } 
+		& > section#Handkarten {grid-area: hand;   margin: 2px;    border: solid 2px black; } 
+		& > section#Lebensbalken {grid-area: bankfeld;   margin: 2px;    border: solid 2px black; }
+		& > section#Gegnerbalken {grid-area: bankgegner;   margin: 2px;    border: solid 2px black; }
+	
+	/*Justin Görtz Vorlage, André Boden leicht umgeändert*/
+		width: 96vw ;
+		height: 96vh ;
+		margin: 0 auto ;
+		border: solid ;
+		border-color: violett ; 
+		background-image: linear-gradient(to bottom right, #57cedb 0%, #feaa00 100%) ;	
 }
 
 /* Andre Boden geschrieben */
 aside{
-	/*background-image: linear-gradient(to bottom right, #304700 0%, #A5F2F3 100%) ;*/
+	background-image: linear-gradient(to bottom right, #304700 0%, #A5F2F3 100%) ;
 }
 
 button {
@@ -65,7 +57,7 @@ button {
 	margin: 2em ;
 }
 
-.ruecken {
+.dummy {
 		width: 65% ;   
 		height: 55% ;    
 		margin: 4px ;

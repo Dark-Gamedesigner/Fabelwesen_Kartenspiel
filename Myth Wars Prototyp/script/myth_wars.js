@@ -8,8 +8,6 @@ var PunktePlayer1 = null;
 var PunktePlayer2 = null;
 var FirstTurnPlayer1 = false;
 var FirstTurnPlayer2 = false;
-var isTurnPlayer1 = false;
-var isTurnPlayer2 = false;
 var TurnIsSkipped = false;
 var Player1Lost = false;
 var Player2Lost = false;
@@ -18,12 +16,11 @@ var FehlerImSpiel = false;
 var Runden = 0;
 
 
+
 function gameStart() {
-	hinlegen(document.getElementById('Deck')) ;
-	isTurnPlayer1 = true;
+	spieler01.amZug = true;
 	kartendecks();//zu finden in deckbauen.js
 	runInitialTurn();
-	
 }
 
 function runInitialTurn() {
@@ -101,7 +98,7 @@ function gameTerminate(result) {
 function Turn() {
 	var Mana = null;
 	var Hand = null;
-	if (isTurnPlayer1 === true) {
+	if (spieler01.amZug === true) {
 		var Mana = spieler01.speicher ;
 		var Hand = spieler01.hand ;
 		if (Mana < 10) {
@@ -109,21 +106,23 @@ function Turn() {
 		}
 		spieler01.speicher = Mana;
 		if (Hand < 8) {
-			//draw();//zu finden in deckbauen.js (auskommentiert zum testen des codes, weil website in endlosschleife hängt (draw fuktion noch nicht angepasst)
+			draw();//zu finden in deckbauen.js
 		}
+		spieler01.hand = Hand;
 		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer1 === true) {
 			//karten auf spielfeld ablegen (to do)
-			if (FirstTurnPlayer1 === false) {
-				//Angriff();
-				document.getElementById('Angreifen').addEventListener('click', Angriff);
-			}
 		}
+		if (FirstTurnPlayer1 === false && TurnIsSkipped === false) {
+			document.getElementById('Angreifen').addEventListener('click', Angriff);
+		}
+		spieler01.punkte = PunktePlayer1;
+		spieler02.punkte = PunktePlayer2;
 		FirstTurnPlayer1 = false;
-		isTurnPlayer2 = true;
-		isTurnPlayer1 = false;
+		spieler02.amZug = true;
+		spieler01.amZug = false;
 		StartNewRound();
-	}else if (isTurnPlayer2 == true) {
+	}else if (spieler02.amZug == true) {
 		var Mana = spieler02.speicher
 		var Hand = spieler02.hand
 		if (Mana < 10) {
@@ -131,19 +130,21 @@ function Turn() {
 		}
 		spieler02.speicher = Mana;
 		if (Hand < 8) {
-			//draw();//zu finden in deckbauen.js (auskommentiert zum testen des codes, weil website in endlosschleife hängt (draw fuktion noch nicht angepasst)
+			draw();//zu finden in deckbauen.js
 		}
+		spieler02.hand = Hand;
 		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer2 === true) {
 			//karten auf spielfeld ablegen (to do)
-			if (FirstTurnPlayer2 === false) {
-				//Angriff();
-				document.getElementById('Angreifen').addEventListener('click', Angriff);
-			}
 		}
+		if (FirstTurnPlayer2 === false && TurnIsSkipped === false) {
+			document.getElementById('Angreifen').addEventListener('click', Angriff);
+		}
+		spieler01.punkte = PunktePlayer1;
+		spieler02.punkte = PunktePlayer2;
 		FirstTurnPlayer2 = false;
-		isTurnPlayer1 = true;
-		isTurnPlayer2 = false;
+		spieler01.amZug = true;
+		spieler02.amZug = false;
 		StartNewRound();
 	}else {
 		gameTerminate();
@@ -157,7 +158,7 @@ function Turn() {
 // Schaden tracken
 function Angriff() {
 	var schaden = null ;
-	if(isTurnPlayer1 === true) {
+	if(spieler01.amZug === true) {
 		schaden = document.getElementById('AngriffPlayer02').getAttribute(HP) - document.getElementById('AngriffPlayer01').getAttribute(Atk);
 		if (schaden > 0) {
 			document.getElementById('AngriffPlayer02').setAttribute(HP, schaden);
@@ -165,7 +166,7 @@ function Angriff() {
 			PunktePlayer1++;
 			//delete.document.getElementById('AngriffPlayer02');//syntax error
 		}
-	}else if(isTurnPlayer2 === true) {
+	}else if(spieler02.amZug === true) {
 		schaden = document.getElementById('AngriffPlayer01').HP - document.getElementById('AngriffPlayer02').Atk;
 		if (schaden > 0) {
 			document.getElementById('AngriffPlayer01').setAttribute(HP, schaden);
