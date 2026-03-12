@@ -4,18 +4,15 @@
 
 window.addEventListener('load', gameStart);
 
-var PunktePlayer1 = null;
-var PunktePlayer2 = null;
-var FirstTurnPlayer1 = false;
-var FirstTurnPlayer2 = false;
 var isTurnPlayer1 = false;
 var isTurnPlayer2 = false;
 var TurnIsSkipped = false;
+var FirstTurnPlayer1 = null;
+var FirstTurnPlayer2 = null;
 var Player1Lost = false;
 var Player2Lost = false;
 var BothPlayersLoose = false;
-var FehlerImSpiel = false;
-var Runden = 0;
+var PunktezaehlerNegativ = false;
 
 
 function gameStart() {
@@ -27,70 +24,49 @@ function gameStart() {
 function runInitialTurn() {
 	FirstTurnPlayer1 = true;
 	FirstTurnPlayer2 = true;
-	StartNewRound();
+	runGame();
 }
-
-function StartNewRound () {
-	Runden++;
-	if (Runden <= 30) {
-		runGame();
-	}else if (PunktePlayer1 < PunktePlayer2) {
-		gameTerminate(0);
-	}else if (PunktePlayer1 > PunktePlayer2) {
-		gameTerminate(1);
-	}else if (PunktePlayer1 == PunktePlayer2){
-		gameTerminate(2);
-	}else {
-		gameTerminate();
-	}
-}
-
 function runGame() {
-	if (FehlerImSpiel === false && BothPlayersLoose === false && Player1Lost === false && Player2Lost === false) {
+	/*while (PunktezaehlerNegativ === false && BothPlayersLoose === false && Player1Lost === false && Player2Lost === false)*/ {
 		PunkteZaehler();
-	}else {
-		if (BothPlayersLoose === true) {
-			alert("Unentschieden");
-		}else if (Player2Lost === true) {
-			alert("Spieler 1 hat gewonnen");
-		}else if (Player1Lost === true) {
-			alert("Spieler 2 hat gewonnen");
-		}else {
-			alert("Kranplätze müssen verdichtet sein![Du hast ein Leck im Code]");
-		}
+		//normaler Game Loop , while schleife läuft bis kondition für spielende eintritt (to do)
 	}
-	document.getElementById('Neuladen').addEventListener('click', ReloadPage);
+	if (BothPlayersLoose === true) {
+		alert("Was ist denn hier los?[Wie habt ihr das hinbekommen?]");
+	}else if (Player2Lost === true) {
+		alert("Spieler 1 hat gewonnen");
+	}else if (Player1Lost === true) {
+		alert("Spieler 2 hat gewonnen");
+	}else {
+		/*alert("Kranplätze müssen verdichtet sein![Du hast ein Leck im Code]");*/
+	}
 }
 
 function PunkteZaehler() {
-	PunktePlayer1 = spieler01.punkte ;
-	PunktePlayer2 = spieler02.punkte ;
-	if (0 <= PunktePlayer1 < 3 && 0 <= PunktePlayer2 < 3) {
+	var PunktePlayer1 = spieler01.punkte ;
+	var PunktePlayer2 = spieler02.punkte ;
+	if (0 <= PunktePlayer1 < 3 && 0 <= PunktePlayer2 < 3)
 		Turn ();
-	}else if (PunktePlayer1 < 3 && PunktePlayer2 >= 3) {
+	else if (PunktePlayer1 < 3 && PunktePlayer2 >= 3)
 		gameTerminate(0);
-	}else if (PunktePlayer1 >= 3 && PunktePlayer2 < 3) {
+	else if (PunktePlayer2 >= 3 && PunktePlayer1 < 3)
 		gameTerminate(1);
-	}else if (PunktePlayer1 >= 3 && PunktePlayer2 >= 3) {
+	else if (PunktePlayer1 >= 3 && PunktePlayer2 >= 3)
 		gameTerminate(2);
-	}else {
+	else 
 		gameTerminate();
-	}//überprüft Punkte von Spielern, initialisiert Zug wenn beide Spieler keine 3 Punkte, ruft andernfalls Funktion zum Beenden des Spiels auf
+	//überprüft Punkte von Spielern, initialisiert Zug wenn beide Spieler keine 3 Punkte, ruft andernfalls Funktion zum Beenden des Spiels auf
 }
 
 function gameTerminate(result) {
 	if (result === 0) {
-		Player1Lost = true;
-		runGame();
-	}else if (result === 1) {
 		Player2Lost = true;
-		runGame();
+	}else if (result === 1) {
+		Player1Lost = true;
 	}else if (result === 2) {
 		BothPlayersLoose = true;
-		runGame();
 	}else {
-		FehlerImSpiel = true;
-		runGame();
+		PunktezaehlerNegativ = true;
 	}
 
 //Ergebnisbestimmung und entsprechendes Alert (kann später in andere Funktion übernommen werden)
@@ -120,7 +96,6 @@ function Turn() {
 		FirstTurnPlayer1 = false;
 		isTurnPlayer2 = true;
 		isTurnPlayer1 = false;
-		StartNewRound();
 	}else if (isTurnPlayer2 == true) {
 		var Mana = spieler02.speicher
 		var Hand = spieler02.hand
@@ -142,11 +117,8 @@ function Turn() {
 		FirstTurnPlayer2 = false;
 		isTurnPlayer1 = true;
 		isTurnPlayer2 = false;
-		StartNewRound();
-	}else {
-		gameTerminate();
 	}
-	
+
 }
 
 
@@ -172,17 +144,13 @@ function Angriff() {
 			//delete.document.getElementById('AngriffPlayer01');//syntax error
 		}
 	}else {
-		gameTerminate();
+		
 	}
 }
 //---------------------------------------------------------------------
 
 function TurnSkip() {
 	TurnIsSkipped = true;
-}
-
-function ReloadPage() {
-	window.location.reload();
 }
 
 //------------------------------------------------------------

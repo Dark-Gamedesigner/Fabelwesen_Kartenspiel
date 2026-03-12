@@ -118,3 +118,12 @@ var Loki = new Götterkarte (0,0,0,0);
 
 //var Mjölnir = new Aktionskarte (f,m,l);
 // erweitert by Kruse <
+
+
+// Test by Justin Görtz
+	class Ruecken{
+	let karten_ruecken = document.createElement('img') ;
+	karten_ruecken.src='../pictures/Karten_Ruecken.png' alt='hier sollte ein bild sein'>
+	document.getElementById('Deck').appendChild(karten_ruecken) ;
+	console.log('karten_ruecken') ;
+	}
