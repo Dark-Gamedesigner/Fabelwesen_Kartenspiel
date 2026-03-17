@@ -84,6 +84,8 @@ var Einhorn = new Angriffskarte (1,2,1);
 var Harpyie = new Angriffskarte (2,1,3);
 
 var Ratatoskr = new Angriffskarte (1,2,1);
+
+var Wolpertinger = new Angriffskarte (1,1,1);
 // erweitert by Kruse <
 
 // ---------- Götterkarte ----------
