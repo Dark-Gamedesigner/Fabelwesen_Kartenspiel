@@ -16,19 +16,13 @@ var Player2Lost = false;
 var BothPlayersLoose = false;
 var FehlerImSpiel = false;
 var Runden = 0;
-const hand = document.getElementById('Handkarten')
-const deck = document.getElementById('Deck')
-const friedhof = document.getElementById('Friedhof')
-const angriff01 = document.getElementById('AngriffPlayer01')
-const angriff02 = document.getElementById('AngriffPlayer02')
-const feld01 = document.getElementById('FeldPlayer01')
-const feld02 = document.getElementById('FeldPlayer02')
+
 
 const spielen = document.querySelectorAll('.aktion');
 
 function gameStart() {
 	
-	hinlegen(document.getElementById('Deck'), 'pictures/Karten_Ruecken.png') ;
+	
 	isTurnPlayer1 = true;
 	kartendecks();//zu finden in deckbauen.js
 	runInitialTurn();
@@ -37,15 +31,24 @@ function gameStart() {
 
 /*spielen.forEach(aktion => {
 	aktion.addEventListener('click', function(e) {
-}
+}*/
 
-hand.addEventListener('click', ablegen)             ;
-	deck.             ;
-	friedhof.addEventListener('click', ablegen)         ;
-	angriff01.addEventListener('click', ablegen)  ;
-	angriff02.addEventListener('click', ablegen)  ;
-	feld01.addEventListener('click', ablegen)     ;
-	feld02.addEventListener('click', ablegen)     ;*/
+
+
+const hand = document.getElementById('Handkarten')
+const deck = document.getElementById('Deck')
+const friedhof = document.getElementById('Friedhof')
+const angriff01 = document.getElementById('AngriffPlayer01')
+const angriff02 = document.getElementById('AngriffPlayer02')
+const feld01 = document.getElementById('FeldPlayer01')
+const feld02 = document.getElementById('FeldPlayer02')
+
+hand.addEventListener('click', ablegen);
+	friedhof.addEventListener('click', ablegen);
+	angriff01.addEventListener('click', ablegen);
+	angriff02.addEventListener('click', ablegen);
+	feld01.addEventListener('click', ablegen);
+	feld02.addEventListener('click', ablegen);
 
 function runInitialTurn() {
 	FirstTurnPlayer1 = true;
@@ -134,15 +137,17 @@ function Turn() {
 		}
 		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer1 === true) {
-			//karten auf spielfeld ablegen (to do)
-			if (FirstTurnPlayer1 === false) {
-				//Angriff();
-				document.getElementById('Angreifen').addEventListener('click', Angriff);
-			}
+			hinlegen(document.getElementById('Deck'), 'pictures/Karten_Ruecken.png');
 		}
+		if (FirstTurnPlayer1 === false && TurnIsSkipped === false) {
+			//Angriff();
+			document.getElementById('Angreifen').addEventListener('click', Angriff);
+		}
+		spieler01.punkte = PunktePlayer1;
+		spieler02.punkte = PunktePlayer2;
 		FirstTurnPlayer1 = false;
-		isTurnPlayer2 = true;
-		isTurnPlayer1 = false;
+		spieler02.amZug = true;
+		spieler01.amZug = false;
 		StartNewRound();
 	}else if (isTurnPlayer2 == true) {
 		var Mana = spieler02.speicher
@@ -156,15 +161,17 @@ function Turn() {
 		}
 		document.getElementById('Zugende').addEventListener('click', TurnSkip);
 		if (TurnIsSkipped === false || FirstTurnPlayer2 === true) {
-			//karten auf spielfeld ablegen (to do)
-			if (FirstTurnPlayer2 === false) {
-				//Angriff();
-				document.getElementById('Angreifen').addEventListener('click', Angriff);
-			}
+			hinlegen(document.getElementById('Deck'), 'pictures/Karten_Ruecken.png');
 		}
+		if (FirstTurnPlayer2 === false && TurnIsSkipped === false) {
+			//Angriff();
+			document.getElementById('Angreifen').addEventListener('click', Angriff);
+		}
+		spieler01.punkte = PunktePlayer1;
+		spieler02.punkte = PunktePlayer2;
 		FirstTurnPlayer2 = false;
-		isTurnPlayer1 = true;
-		isTurnPlayer2 = false;
+		spieler01.amZug = true;
+		spieler02.amZug = false;
 		StartNewRound();
 	}else {
 		gameTerminate();
