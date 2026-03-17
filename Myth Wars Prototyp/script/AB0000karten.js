@@ -111,7 +111,7 @@ var Odin = new Götterkarte (8,10,8,0);
 
 var Frigg = new Götterkarte (6,6,6,0);
 
-var Hel = new Götterkarte (7,0,0,0);
+var Hela = new Götterkarte (7,0,0,0);
 
 var Freya = new Götterkarte (7,8,8,0);
 
