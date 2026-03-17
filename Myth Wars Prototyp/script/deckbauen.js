@@ -25,8 +25,8 @@ function kartendecks() {
 function baueDeck1() {//erweiterung by Vogel
 	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
-					'Gleipnir' , 'Dreizack des Poseidon' , 'Aigis' , 'Mjölnir']
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
+					Gleipnir , Dreizack des Poseidon , Aigis , Mjölnir]
 	deck1 = [] ;
 		for(let i = 0; i < Playerone.length; i++) {
 			deck1.push(Playerone[i]) ;
@@ -39,8 +39,8 @@ function baueDeck1() {//erweiterung by Vogel
 function baueDeck2() {//erweiterung by Vogel
 	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
-					'Gleipnir' , 'Dreizack des Poseidon' , 'Aigis' , 'Mjölnir']
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
+					Gleipnir , Dreizack des Poseidon , Aigis , Mjölnir]
 	deck2 = [] ;
 		for(let i = 0; i < Playertwo.length; i++) {
 			deck2.push(Playertwo[i]) ;
