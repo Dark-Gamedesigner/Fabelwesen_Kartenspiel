@@ -3,7 +3,7 @@
 //JS dokument für klassenstruktur des PIP projekts Sammelkartenspiel "Myth Wars"
 'use strict';
 
-class Karten {
+class Karte {
 	Manakosten = null;
 	Hitpoints = null;
 	constructor (Mana, HP) {
@@ -12,7 +12,7 @@ class Karten {
 	}
 }
 
-class Angriffskarte extends Karten {
+class Angriffskarte extends Karte {
 	Attack = null;
 	constructor (Mana, HP, Atk) {
 		super (Mana, HP);
@@ -20,7 +20,7 @@ class Angriffskarte extends Karten {
 	}
 }
 
-class Aktionskarte extends Karten {
+class Aktionskarte extends Karte {
 	Aktionseffekt = null;
 	constructor (Manakosten, HP, AktionNr) {
 		super (Manakosten, HP);
@@ -45,67 +45,63 @@ class Götterkarte extends Angriffskarte {
 }
 
 // ---------- Angriffskarte ----------
-var Zerberus = new Angriffskarte (4,5,10);
+var Zerberus = new Angriffskarte (4, 5, 10);
 
-var Minotaure = new Angriffskarte (2,3,7);
+var Minotaure = new Angriffskarte (2, 3, 7);
+// erweitert by Kruse >
+var JackOLantern = new Angriffskarte (0, 0, 0);
 
-var Medusa = new Angriffskarte (0,0,0);
+var Pixi = new Angriffskarte (0, 0, 0);
 
-// erweitert by Kruse (angepasst by Vogel)>
-var JackOLantern = new Angriffskarte (0,0,0);
+var Hochpixi = new Angriffskarte (0, 0, 0);
 
-var Pixi = new Angriffskarte (0,0,0);
+var Kelpie = new Angriffskarte (0, 0, 0);
 
-var Hochpixi = new Angriffskarte (0,0,0);
+var Werwolf = new Angriffskarte (0, 0, 0);
 
-var Kelpie = new Angriffskarte (0,0,0);
+var Zyklop = new Angriffskarte (0, 0, 0);
 
-var Werwolf = new Angriffskarte (0,0,0);
+var Valkyre = new Angriffskarte (0, 0, 0);
 
-var Zyklop = new Angriffskarte (0,0,0);
+var Pegasus = new Angriffskarte (0, 0, 0);
 
-var Valkyre = new Angriffskarte (0,0,0);
+var Hydra = new Angriffskarte (0, 0, 0);
 
-var Pegasus = new Angriffskarte (0,0,0);
+var Zentaure = new Angriffskarte (0, 0, 0);
 
-var Hydra = new Angriffskarte (0,0,0);
+var Sphinx = new Angriffskarte (0, 0, 0);
 
-var Zentaure = new Angriffskarte (0,0,0);
+var Chimäre = new Angriffskarte (0, 0, 0);
 
-var Sphinx = new Angriffskarte (0,0,0);
+var Typhon = new Angriffskarte (0, 0, 0);
 
-var Chimäre = new Angriffskarte (0,0,0);
+var Greif = new Angriffskarte (0, 0, 0);
 
-var Typhon = new Angriffskarte (0,0,0);
+var Einhorn = new Angriffskarte (0, 0, 0);
 
-var Greif = new Angriffskarte (0,0,0);
+var Harpyie = new Angriffskarte (0, 0, 0);
 
-var Einhorn = new Angriffskarte (0,0,0);
-
-var Harpyie = new Angriffskarte (0,0,0);
-
-var Ratatoskr = new Angriffskarte (0,0,0);
+var Ratatoskr = new Angriffskarte (0, 0, 0);
 // erweitert by Kruse <
 
 // ---------- Götterkarte ----------
 var Zeus = new Götterkarte (0,0,0,0);
+// erweitert by Justin G.
+var Thor = new Angriffskarte (4, 5, 10);
 
+var Skadi = new Angriffskarte (4, 5, 10);
+
+var Poseidon = new Angriffskarte (4, 5, 10);
+
+var Hera = new Angriffskarte (4, 5, 10);
+
+var Aphrodite = new Angriffskarte (4, 5, 10);
+
+var Artemis = new Angriffskarte (4, 5, 10);
+
+var Hermes = new Angriffskarte (4, 5, 10);
+// erweitert by Justin G.
 var Hades = new Götterkarte (0,0,0,0);
-
-var Poseidon = new Götterkarte(0,0,0,0);
-
-var Hera = new Götterkarte(0,0,0,0);
-
-var Aphrodite = new Götterkarte(0,0,0,0);
-
-var Artemis = new Götterkarte(0,0,0,0);
-
-var Hermes = new Götterkarte(0,0,0,0);
-
-var Thor = new Götterkarte (0,0,0,0);
-
-var Skadi = new Götterkarte (0,0,0,0);
-
 // erweitert by Kruse >
 var Odin = new Götterkarte (0,0,0,0);
 
@@ -124,6 +120,7 @@ var Loki = new Götterkarte (0,0,0,0);
 // ---------- Aktionskarte ----------
 //var OrakelVonDelphi = new Aktionskarte (f,m,l);
 // erweitert by Kruse >
+var Gungir = new Aktionskarte (0,0,0);
 
 var Gleipnir = new Aktionskarte (0,0,0);
 
@@ -135,3 +132,6 @@ var Aigis = new Aktionskarte (0,0,0);
 
 var Mjölnir = new Aktionskarte (0,0,0);
 // erweitert by Kruse <
+
+
+
