@@ -25,8 +25,8 @@ function kartendecks() {
 function baueDeck1() {//erweiterung by Vogel
 	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
-					Gleipnir , Dreizack des Poseidon , Aigis , Mjölnir]
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
+					'Gleipnir' , 'Dreizack des Poseidon' , 'Aigis' , 'Mjölnir']
 	deck1 = [] ;
 		for(let i = 0; i < Playerone.length; i++) {
 			deck1.push(Playerone[i]) ;
@@ -39,8 +39,8 @@ function baueDeck1() {//erweiterung by Vogel
 function baueDeck2() {//erweiterung by Vogel
 	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
-					Gleipnir , Dreizack des Poseidon , Aigis , Mjölnir]
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
+					'Gleipnir' , 'Dreizack des Poseidon' , 'Aigis' , 'Mjölnir']
 	deck2 = [] ;
 		for(let i = 0; i < Playertwo.length; i++) {
 			deck2.push(Playertwo[i]) ;
@@ -89,29 +89,12 @@ function seeHand( hand, feld ) {
 	feld.innerHTML = "" ;									// Hand leeren
 	for ( const karte of hand ) {							// Jede Karte durchgehen
 		const bild = document.createElement( "img" ) ;		// Bild erstellen
-		bild.src = "./pictures/Karten_Ruecken.png" ;		// Bildpfad erstellen
+		bild.src = "./pictures" + karte + ".png" ;		// Bildpfad erstellen
 		feld.appendChild( bild ) ;							// Fügt das erstellte ins Feld
 	}						
 }
 /* ---- < von Kruse ----*/
-//--------------------------------------------------------------------------------------------
-
- // Geschrieben von André Boden
-	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
-
-function hinlegen(Ort, quelle) {
-	let karte = document.createElement('img') ;
-		karte.src= 'pictures/Karten_Ruecken.png' ;
-        karte.className = 'ruecken' ;
-        Ort.appendChild(karte) ;
-		karte.addEventListener('click', e => {aktivekarte = karte }) ;		
-}
 
 
 
-function ablegen(Ereignis, Ort) {
-	console.log(Ereignis) ;
-	let legen = document.createElement('img') ;
-	Ort = Ereignis.target ;
-	hinlegen(Ort, quelle)
-}
+

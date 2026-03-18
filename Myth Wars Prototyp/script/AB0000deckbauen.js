@@ -24,7 +24,7 @@ function kartendecks() {
 function baueDeck1() {//erweiterung by Vogel
 	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
 					Gleipnir , Dreizack , Aigis , Mjölnir] ;
 	deck1 = [] ;
 		for(let i = 0; i < Playerone.length; i++) {
@@ -38,7 +38,7 @@ function baueDeck1() {//erweiterung by Vogel
 function baueDeck2() {//erweiterung by Vogel
 	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
 					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , Wolpertinger
+					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
 					Gleipnir , Dreizack , Aigis , Mjölnir] ;
 	deck2 = [] ;
 		for(let i = 0; i < Playertwo.length; i++) {
@@ -68,6 +68,12 @@ function mischeDeck2() {
 
 /* ---- von Kruse > ----*/
 function draw( deck, hand ) {
+	if ( deck.length === 0 ) {
+		return null ;
+	}
+	if ( hand.length >= 8 ) {
+		return null ;
+	}
 	const karte = deck.pop() ;	// oberste Karte ziehen
 	hand.push( karte ) ;		// Karte in Hand schieben
 	return karte ;
@@ -111,7 +117,7 @@ function ablegen() {
 
 function hinlegen(Ort, quelle) {
 	let karte = document.createElement('img') ;
-		karte.src= quelle ;
+		karte.src= karte.bild ;
         karte.className = 'ruecken' ;
         Ort.appendChild(karte) ;
 }

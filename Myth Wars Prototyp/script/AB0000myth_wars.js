@@ -21,9 +21,8 @@ var Runden = 0;
 const spielen = document.querySelectorAll('.aktion');
 
 function gameStart() {
-	
-	
-	isTurnPlayer1 = true;
+	spieler01.amZug = true;
+	//einfügen der Dummy Karte in Felder, damit code funktioniert
 	kartendecks();//zu finden in deckbauen.js
 	runInitialTurn();
 	
@@ -43,12 +42,12 @@ const angriff02 = document.getElementById('AngriffPlayer02')
 const feld01 = document.getElementById('FeldPlayer01')
 const feld02 = document.getElementById('FeldPlayer02')
 
-hand.addEventListener('click', ablegen);
-	friedhof.addEventListener('click', ablegen);
-	angriff01.addEventListener('click', ablegen);
-	angriff02.addEventListener('click', ablegen);
-	feld01.addEventListener('click', ablegen);
-	feld02.addEventListener('click', ablegen);
+/*hand.addEventListener('click', ablegen);
+friedhof.addEventListener('click', ablegen);
+angriff01.addEventListener('click', ablegen);
+angriff02.addEventListener('click', ablegen);
+feld01.addEventListener('click', ablegen);
+feld02.addEventListener('click', ablegen);*/
 
 function runInitialTurn() {
 	FirstTurnPlayer1 = true;
@@ -85,6 +84,8 @@ function runGame() {
 			alert("Kranplätze müssen verdichtet sein![Du hast ein Leck im Code]");
 		}
 	}
+	console.log(deck1);
+	console.log(deck2);
 	document.getElementById('Neuladen').addEventListener('click', ReloadPage);
 }
 
@@ -125,7 +126,7 @@ function gameTerminate(result) {
 function Turn() {
 	var Mana = null;
 	var Hand = null;
-	if (isTurnPlayer1 === true) {
+	if (spieler01.amZug === true) {
 		var Mana = spieler01.speicher ;
 		var Hand = spieler01.hand ;
 		if (Mana < 10) {
@@ -149,7 +150,7 @@ function Turn() {
 		spieler02.amZug = true;
 		spieler01.amZug = false;
 		StartNewRound();
-	}else if (isTurnPlayer2 == true) {
+	}else if (spieler02.amZug === true) {
 		var Mana = spieler02.speicher
 		var Hand = spieler02.hand
 		if (Mana < 10) {

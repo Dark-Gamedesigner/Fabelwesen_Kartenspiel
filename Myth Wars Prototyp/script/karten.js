@@ -3,7 +3,7 @@
 //JS dokument für klassenstruktur des PIP projekts Sammelkartenspiel "Myth Wars"
 'use strict';
 
-class Karten {
+class Karte {
 	Manakosten = null;
 	Hitpoints = null;
 	constructor (Mana, HP) {
@@ -12,7 +12,7 @@ class Karten {
 	}
 }
 
-class Angriffskarte extends Karten {
+class Angriffskarte extends Karte {
 	Attack = null;
 	constructor (Mana, HP, Atk) {
 		super (Mana, HP);
@@ -20,13 +20,13 @@ class Angriffskarte extends Karten {
 	}
 }
 
-class Aktionskarte extends Karten {
+/*class Aktionskarte extends Karten {
 	Aktionseffekt = null;
 	constructor (Manakosten, HP, AktionNr) {
 		super (Manakosten, HP);
 		this.Aktionseffekt = AktionNr;
 	}
-}
+}*/
 
 /*class Unterstützerkarte extends Karten {
 	Feldeffekt = null;
@@ -124,14 +124,15 @@ var Loki = new Götterkarte (0,0,0,0);
 // ---------- Aktionskarte ----------
 //var OrakelVonDelphi = new Aktionskarte (f,m,l);
 // erweitert by Kruse >
+//var Gungir = new Aktionskarte (f,m,l);
 
-var Gleipnir = new Aktionskarte (0,0,0);
+//var Gleipnir = new Aktionskarte (f,m,l);
 
-var Dreizack = new Aktionskarte (0,0,0);
+//var DreizackDesPoseidon = new Aktionskarte (f,m,l);
 
-var Medusa = new Aktionskarte (0,0,0);
+//var Medusa = new Aktionskarte (f,m,l);
 
-var Aigis = new Aktionskarte (0,0,0);
+//var Aigis = new Aktionskarte (f,m,l);
 
-var Mjölnir = new Aktionskarte (0,0,0);
+//var Mjölnir = new Aktionskarte (f,m,l);
 // erweitert by Kruse <

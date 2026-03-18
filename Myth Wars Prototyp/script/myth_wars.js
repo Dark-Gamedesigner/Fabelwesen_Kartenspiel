@@ -14,18 +14,10 @@ var Player2Lost = false;
 var BothPlayersLoose = false;
 var FehlerImSpiel = false;
 var Runden = 0;
-var aktiveKarte = null ;
+
 
 
 function gameStart() {
-	document.getElementById('Handkarten').addEventListener('click', ablegen)             ;
-	document.getElementById('Deck').addEventListener('click', ablegen)             ;
-	document.getElementById('Friedhof').addEventListener('click', ablegen)         ;
-	document.getElementById('AngriffPlayer01').addEventListener('click', ablegen)  ;
-	document.getElementById('AngriffPlayer02').addEventListener('click', ablegen)  ;
-	document.getElementById('FeldPlayer01').addEventListener('click', ablegen)     ;
-	document.getElementById('FeldPlayer02').addEventListener('click', ablegen)     ;
-	hinlegen(document.getElementById('Deck'), 'pictures/Karten_Ruecken.png') ;
 	spieler01.amZug = true;
 	kartendecks();//zu finden in deckbauen.js
 	runInitialTurn();
