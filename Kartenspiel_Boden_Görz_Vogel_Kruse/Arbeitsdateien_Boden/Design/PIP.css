@@ -1,0 +1,25 @@
+#Spielfeld{
+	display: grid;
+	grid-template-columns: 40px 4fr 1fr ;
+	grid-template-areas:	'links mitte rechts' ;
+	& > section#Rechts {grid-area: rechts ;   border: solid 2px black; } 
+	& > section#Mitte {grid-area: mitte ;   border: solid 2px blue ; } 
+	& > section#Links {grid-area: links ;  border: solid 2px red ;  } 
+	& > section#Rechts { .Deck: padding: 2px; border: solid 2px black ; }
+	& > section#Rechts { .Friedhof: padding: 2px; border: solid 2px black; }
+	& > section#Rechts { .Mana: padding: 2px; border: solid 2px black ; }
+		
+		& > mitte 
+		& >
+	
+		
+ 
+	width: 96vw ;
+	height: 96vh ;
+	margin: 0 auto ;
+	border: solid ;
+	border-color: violett ; 
+	background-color: green ;
+		
+}
+
