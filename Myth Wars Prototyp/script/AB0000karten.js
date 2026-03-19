@@ -59,6 +59,8 @@ var Pixi = new Angriffskarte (1,2,"../pictures/Pixie.png",2);
 
 var Kelpie = new Angriffskarte (2,2,"../pictures/Kelpie.png",3);
 
+var Wolpertinger = new Angriffskarte (1,1,"../pictures/Wolpertinger.png",1);
+
 var Werwolf = new Angriffskarte (3,4,"../pictures/Werwolf.png",2);
 
 var Zyklop = new Angriffskarte (4,3,"../pictures/Zyklop.png",3);

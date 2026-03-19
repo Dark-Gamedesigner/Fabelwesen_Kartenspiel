@@ -23,8 +23,8 @@ function kartendecks() {
 // Nordisches Array
 function baueDeck1() {//erweiterung by Vogel
 	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
-					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
+					JackOLantern , Pixi , Wolpertinger , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
+					Hydra , Minotaure , Sphinx , Chimaere , Greif , Einhorn , Harpyie , Zerberus ,
 					Gleipnir , Dreizack , Aigis , Mjölnir] ;
 	deck1 = [] ;
 		for(let i = 0; i < Playerone.length; i++) {
@@ -37,13 +37,14 @@ function baueDeck1() {//erweiterung by Vogel
 // Griechisches  Array
 function baueDeck2() {//erweiterung by Vogel
 	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
-					JackOLantern , Pixi , Hochpixi , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
-					Hydra , Zentaure , Minotaure , Sphinx , Chimäre , Greif , Einhorn , Harpyie , Zerberus , 
+					JackOLantern , Pixi , Wolpertinger , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
+					Hydra , Minotaure , Sphinx , Chimaere , Greif , Einhorn , Harpyie , Zerberus , 
 					Gleipnir , Dreizack , Aigis , Mjölnir] ;
 	deck2 = [] ;
 		for(let i = 0; i < Playertwo.length; i++) {
 			deck2.push(Playertwo[i]) ;
 		}
+		console.log(Playertwo) ;
 }
 // Made by Justin Görtz
 function mischeDeck1() {
@@ -94,7 +95,7 @@ function seeHand( hand, feld ) {
 	feld.innerHTML = "" ;									// Hand leeren
 	for ( const karte of hand ) {							// Jede Karte durchgehen
 		const bild = document.createElement( "img" ) ;		// Bild erstellen
-		bild.src = "./media/karten/" + karte + ".png" ;		// Bildpfad erstellen
+		bild.src = "../pictures" + karte + ".png" ;		// Bildpfad erstellen
 		feld.appendChild( bild ) ;							// Fügt das erstellte ins Feld
 	}						
 }
@@ -103,12 +104,10 @@ function seeHand( hand, feld ) {
 // Geschrieben von André Boden und erweiter von Justin Görtz
 	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
 
-function hinlegen(Ort, src) {
-	const deckFeld = document.getElementById("Deck");
+function hinlegen(Ort, src, klasse) {
+	/*const deckFeld = document.getElementById("Deck");*/
 	let karte = document.createElement('img') ;
 		karte.src= src ;
-        karte.className = 'ruecken' ;
+        karte.classList.add(klasse) ;
         Ort.appendChild(karte) ;
 }
-
-
