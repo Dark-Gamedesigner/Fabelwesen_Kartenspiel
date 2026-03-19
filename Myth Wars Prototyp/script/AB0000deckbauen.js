@@ -100,27 +100,15 @@ function seeHand( hand, feld ) {
 }
 /* ---- < von Kruse ----*/
 //---------------------------------------------------------------------------------------------------------------------------------
-// Geschrieben von André Boden 
+// Geschrieben von André Boden und erweiter von Justin Görtz
 	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
-	
-																				   
-function ablegen() {
-	const spielen = document.querySelectorAll('.aktion');
-	aktion.forEach(aktion => {
-		spielen.addEventListener('click', function(e) {
-			hinlegen()
-	hinlegen()
-		}) ;
-	}) ;
-}
 
-
-function hinlegen(Ort, quelle) {
+function hinlegen(Ort, src) {
+	const deckFeld = document.getElementById("Deck");
 	let karte = document.createElement('img') ;
-		karte.src= karte.bild ;
+		karte.src= src ;
         karte.className = 'ruecken' ;
         Ort.appendChild(karte) ;
 }
-
 
 
