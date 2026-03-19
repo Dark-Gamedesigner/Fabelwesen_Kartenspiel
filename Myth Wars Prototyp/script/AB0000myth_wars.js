@@ -20,7 +20,7 @@ var Runden = 0;
 const spielen = document.querySelectorAll('.aktion');
 
 function gameStart() {
-console.log('gameStart');
+	hinlegen(document.getElementById('Deck'), './pictures/Karten_Ruecken.png' ) ;
 	FirstTurnPlayer1 = true;
 	FirstTurnPlayer2 = true;
 	spieler01.amZug = true;
