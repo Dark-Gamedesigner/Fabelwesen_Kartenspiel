@@ -92,11 +92,9 @@ function handStart2() {
 	}
 }
 function seeHand( hand, feld ) {
-	feld.innerHTML = "" ;									// Hand leeren
-	for ( const karte of hand ) {							// Jede Karte durchgehen
-		const bild = document.createElement( "img" ) ;		// Bild erstellen
-		bild.src = "../pictures" + karte + ".png" ;		// Bildpfad erstellen
-		feld.appendChild( bild ) ;							// Fügt das erstellte ins Feld
+	feld.innerHTML = "" ;												// Hand leeren
+	for ( const karte of hand ) {										// Jede Karte durchgehen
+		hinlegen(feld, karte.SpriteKarte).addEventListener('click') ;	// Fügt das erstellte ins Feld
 	}						
 }
 /* ---- < von Kruse ----*/
@@ -104,10 +102,21 @@ function seeHand( hand, feld ) {
 // Geschrieben von André Boden und erweiter von Justin Görtz
 	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
 
-function hinlegen(Ort, src, klasse) {
+function hinlegen(Ort, src) {
 	/*const deckFeld = document.getElementById("Deck");*/
 	let karte = document.createElement('img') ;
 		karte.src= src ;
-        karte.classList.add(klasse) ;
         Ort.appendChild(karte) ;
+}
+
+
+function ablegen() {
+	const Orte = document.querySelectorAll('.aktion'); 
+	console.log(Orte);
+	Orte.forEach(Ort => {
+		Ort.addEventListener('click', function(e) {	
+		console.log(e) ;		
+			hinlegen(Ort, './pictures/Karten_Ruecken.png', 'aktion')
+		}) ;
+	}) ;
 }
