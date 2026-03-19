@@ -20,7 +20,7 @@ var Runden = 0;
 const spielen = document.querySelectorAll('.aktion');
 
 function gameStart() {
-	hinlegen(document.getElementById('Deck'), './pictures/Karten_Ruecken.png' ) ;
+	hinlegen(document.getElementById('Deck'), './pictures/Karten_Ruecken.png', 'ruecken' ) ; /* drin stehen lassen ist für die Anzeige der Karte des Decks beim Laden des Spiels */
 	FirstTurnPlayer1 = true;
 	FirstTurnPlayer2 = true;
 	spieler01.amZug = true;
