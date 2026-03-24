@@ -22,7 +22,6 @@ var Runden = 0;
 const spielen = document.querySelectorAll('.aktion');
 
 function gameStart() {
-	hinlegen(document.getElementById('Deck'), './pictures/Karten_Ruecken.png', 'ruecken' ) ; /* drin stehen lassen ist für die Anzeige der Karte des Decks beim Laden des Spiels */
 	FirstTurnPlayer1 = true;
 	FirstTurnPlayer2 = true;
 	spieler01.amZug = true;
@@ -32,7 +31,8 @@ function gameStart() {
 }
 
 function StartNewRound () {
-console.log('StartNewRound');
+	rendernP1();
+	console.log('StartNewRound');
 	Runden++;
 	if (Runden <= 30) {
 		console.log(Runden);
@@ -123,6 +123,7 @@ console.log('Turn');
 			angriff1.push(Wolpertinger1);
 		}
 		console.log(angriff1);
+		rendernP1();
 		document.getElementById('Zugende').addEventListener('click', TurnEnd );
 		let hand = document.getElementById('Handkarten').addEventListener('click', legenAufBank);
 		let feld01 = document.getElementById('FeldPlayer01').addEventListener('click', legenAufAngriff);
@@ -142,6 +143,7 @@ console.log('Turn');
 			angriff2.push(Wolpertinger2);
 		}
 		console.log(angriff2);
+		rendernP2();
 		document.getElementById('Zugende').addEventListener('click', TurnEnd);
 		let hand = document.getElementById('Handkarten').addEventListener('click', legenAufBank);
 		let feld02 = document.getElementById('FeldPlayer02').addEventListener('click', legenAufAngriff);
@@ -158,9 +160,11 @@ function legenAufBank () {// nur für Code im Hintergrund
 	if (spieler01.amZug === true) {
 		legeKarteBank(hand1, bank1);// zu finden in deckbauen.js
 		console.log(bank1);
+		rendernP1();
 	}else if (spieler02.amZug === true) {
 		legeKarteBank(hand2, bank2);
 		console.log(bank2);
+		rendernP2();
 	}
 }
 
@@ -168,9 +172,11 @@ function legenAufAngriff () {// nur für Code im Hintergrund
 	if (spieler01.amZug === true) {
 		legeKarteAngriff(bank1, angriff1);// zu finden in deckbauen.js
 		console.log(angriff1);
+		rendernP1();
 	}else if (spieler02.amZug === true) {
 		legeKarteAngriff(bank2, angriff2);
 		console.log(angriff2);
+		rendernP2();
 	}
 }
 
@@ -191,7 +197,6 @@ console.log('Angriff');
 			angriff2.pop();
 			angriff2.push(Leer);
 			console.log(schaden);
-			//delete.document.getElementById('AngriffPlayer02');//syntax error
 			TurnEnd(1);
 		}
 	}else if(spieler02.amZug === true) {
@@ -205,7 +210,6 @@ console.log('Angriff');
 			angriff1.pop();
 			angriff1.push(Leer);
 			console.log(schaden);
-			//delete.document.getElementById('AngriffPlayer01');//syntax error
 			TurnEnd(2);
 		}
 	}else {

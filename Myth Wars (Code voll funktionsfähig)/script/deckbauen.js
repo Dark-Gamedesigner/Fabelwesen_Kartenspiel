@@ -8,7 +8,12 @@ let hand2 = [] ;
 //made by Tim Vogel >>>
 let bank1 = [] ;
 let bank2 = [] ;
-let Empty = [Leer];
+let Empty = [Leer];//nicht genutzt
+var feld = null ;//made by Kruse, eingefügt/geändert von Vogel
+var passiv1 = null ;
+var passiv2 = null ;
+var aktiv1 = null ;
+var aktiv2 = null ;
 //<<< made by Tim Vogel
 
 function kartendecks() {
@@ -16,11 +21,19 @@ function kartendecks() {
 		baueDeck2() ;
 		mischeDeck1() ;
 		mischeDeck2() ;
-		/* ---- von Kruse > ----*/
+		/* ---- von Kruse, abgeändert von Vogel > ----*/
 		handStart1();
 		handStart2();
-		const feld = document.getElementById( "Handkarten" ) ;
-		 seeHand(hand1, feld) ;	// ACHTUNG! Das ist vorerst nur da damit man was sehen kann!!!
+		feld = document.getElementById( "Handkarten" ) ;
+		seeHand(hand1, feld);// ACHTUNG! Das ist vorerst nur da damit man was sehen kann!!!
+// made by Tim Vogel >>>
+		const stapel = document.getElementById("Deck");
+		passiv1 = document.getElementById("FeldPlayer01");
+		passiv2 = document.getElementById("FeldPlayer02");
+		aktiv1 = document.getElementById("AngriffPlayer01");
+		aktiv2 = document.getElementById("AngriffPlayer02");
+		hinlegen(stapel, Leer.SpriteKarte) ;
+//<<< made by Tim Vogel
 		/* ---- < von Kruse ----*/
 }
 
@@ -96,8 +109,9 @@ function handStart2() {
 		draw( deck2, hand2 ) ;		//vom Deck2 auf die Hand2
 	}
 }
+
 function seeHand( hand, feld ) {
-	//feld.innerHTML = "" ;												// Hand leeren
+	feld.innerHTML = "" ;												// Hand leeren
 	for ( const karte of hand ) {										// Jede Karte durchgehen
 		hinlegen(feld, karte.SpriteKarte);	// Fügt das erstellte ins Feld
 	}						
@@ -108,10 +122,10 @@ function seeHand( hand, feld ) {
 // Geschrieben von André Boden und erweiter von Justin Görtz
 	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
 
-function hinlegen(Ort, src) {
+function hinlegen(Ort, motiv) {
 	/*const deckFeld = document.getElementById("Deck");*/
 	let karte = document.createElement('img') ;
-		karte.src= src ;
+		karte.src = motiv ;
 		Ort.appendChild(karte) ;
 }
 
@@ -151,5 +165,21 @@ function legeKarteAngriff (bank, angriff) {// nur für Code im Hintergrund
 	let karte = bank.pop();
 	angriff.push( karte );
 	return karte;
+}
+
+function rendernP1() {//funktion zum anzeigen der karten
+	seeHand(hand1, feld);
+	hinlegen(passiv1, Leer.SpriteKarte);
+	hinlegen(passiv2, Leer.SpriteKarte);
+	hinlegen(aktiv1, Leer.SpriteKarte);
+	hinlegen(aktiv2, Leer.SpriteKarte);
+}
+
+function rendernP2() {//funktion zum anzeigen der karten
+	seeHand(hand2, feld);
+	hinlegen(passiv1, Leer.SpriteKarte);
+	hinlegen(passiv2, Leer.SpriteKarte);
+	hinlegen(aktiv1, Leer.SpriteKarte);
+	hinlegen(aktiv2, Leer.SpriteKarte);
 }
 //<<< made by Tim Vogel
