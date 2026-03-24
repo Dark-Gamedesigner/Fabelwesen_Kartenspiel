@@ -1,0 +1,155 @@
+//---------------------------------------------------------------------------------
+// Made by Justin Görtz
+'use strict'
+let deck1 ;
+let deck2 ;
+let hand1 = [] ;
+let hand2 = [] ;
+//made by Tim Vogel >>>
+let bank1 = [] ;
+let bank2 = [] ;
+let Empty = [Leer];
+//<<< made by Tim Vogel
+
+function kartendecks() {
+		baueDeck1() ;
+		baueDeck2() ;
+		mischeDeck1() ;
+		mischeDeck2() ;
+		/* ---- von Kruse > ----*/
+		handStart1();
+		handStart2();
+		const feld = document.getElementById( "Handkarten" ) ;
+		 seeHand(hand1, feld) ;	// ACHTUNG! Das ist vorerst nur da damit man was sehen kann!!!
+		/* ---- < von Kruse ----*/
+}
+
+// Made by Justin Görtz
+// Nordisches Array
+function baueDeck1() {//erweiterung by Vogel
+	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
+					JackOLantern , Pixi , Wolpertinger1 , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
+					Hydra , Minotaure , Sphinx , Chimaere , Greif , Einhorn , Harpyie , Zerberus ,
+					Gleipnir , Dreizack , Aigis , Mjölnir] ;
+	deck1 = [] ;
+		for(let i = 0; i < Playerone.length; i++) {
+			deck1.push(Playerone[i]) ;
+		}
+}
+
+
+// Made by Justin Görtz
+// Griechisches  Array
+function baueDeck2() {//erweiterung by Vogel
+	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
+					JackOLantern , Pixi , Wolpertinger2 , Ratatoskr , Kelpie , Werwolf , Zyklop , Valkyre , Medusa , Pegasus , 
+					Hydra , Minotaure , Sphinx , Chimaere , Greif , Einhorn , Harpyie , Zerberus , 
+					Gleipnir , Dreizack , Aigis , Mjölnir] ;
+	deck2 = [] ;
+		for(let i = 0; i < Playertwo.length; i++) {
+			deck2.push(Playertwo[i]) ;
+		}
+		console.log(Playertwo) ;
+}
+// Made by Justin Görtz
+function mischeDeck1() {
+	for(let i = 0; i < deck1.length; i++) {
+		let j = Math.floor(Math.random() * deck1.length) ;
+		let temp = deck1[i] ;
+		deck1[i] = deck1[j] ;
+		deck1[j] = temp ;
+	}
+}
+// Made by Justin Görtz
+function mischeDeck2() {
+	for(let i = 0; i < deck2.length; i++) {
+		let j = Math.floor(Math.random() * deck2.length) ;
+		let temp = deck2[i] ;
+		deck2[i] = deck2[j] ;
+		deck2[j] = temp ;
+	}
+}
+
+//---------------------------------------------------------------------------------
+
+/* ---- von Kruse > ----*/
+function draw( deck, hand ) {
+	if ( deck.length <= 0 ) {
+		return null ;
+	}
+	if ( hand.length >= 8 ) {
+		return null ;
+	}
+	const karte = deck.pop() ;	// oberste Karte ziehen
+	hand.push( karte ) ;		// Karte in Hand schieben
+	return karte ;
+}
+
+function handStart1() {
+	for( let i = 0; i < 5; i++) {	// beim Start 5 Karten ziehen
+		draw( deck1, hand1 ) ;		// vom Deck1 auf die Hand1
+	}
+}
+
+function handStart2() {
+	for( let i = 0; i < 5; i++) {	// beim Start 5 Karten ziehen
+		draw( deck2, hand2 ) ;		//vom Deck2 auf die Hand2
+	}
+}
+function seeHand( hand, feld ) {
+	//feld.innerHTML = "" ;												// Hand leeren
+	for ( const karte of hand ) {										// Jede Karte durchgehen
+		hinlegen(feld, karte.SpriteKarte);	// Fügt das erstellte ins Feld
+	}						
+}
+/* ---- < von Kruse ----*/
+
+//---------------------------------------------------------------------------------------------------------------------------------
+// Geschrieben von André Boden und erweiter von Justin Görtz
+	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
+
+function hinlegen(Ort, src) {
+	/*const deckFeld = document.getElementById("Deck");*/
+	let karte = document.createElement('img') ;
+		karte.src= src ;
+		Ort.appendChild(karte) ;
+}
+
+
+function ablegen() {
+	const Orte = document.querySelectorAll('.aktion'); 
+	console.log(Orte);
+	Orte.forEach(Ort => {
+		Ort.addEventListener('click', function(e) {	
+		console.log(e) ;		
+			hinlegen(Ort, './pictures/Karten_Ruecken.png', 'aktion')
+		}) ;
+	}) ;
+}
+
+//made by Tim Vogel >>>
+function legeKarteBank (hand, bank) {// nur für Code im Hintergrund
+	if (hand.length <= 0) {
+		return null ;
+	}
+	if (bank.length >= 4) {
+		return null ;
+	}
+	let karte = hand.pop();
+	bank.push( karte );
+	return karte;
+}
+
+function legeKarteAngriff (bank, angriff) {// nur für Code im Hintergrund
+	angriff.pop(Leer);
+	if (bank.length <= 0) {
+		return null ;
+	}
+	if (angriff.length >= 1) {
+		return null ;
+	}
+	let karte = bank.pop();
+	angriff.push( karte );
+	return karte;
+}
+//<<< made by Tim Vogel
