@@ -118,6 +118,22 @@ function seeHand( hand, feld ) {
 }
 /* ---- < von Kruse ----*/
 
+//made by Tim Vogel >>>
+function seeBank(bank, passiv) {
+	passiv.innerHTML = "" ;
+	for (const karte of bank) {
+		hinlegen(passiv, karte.SpriteKarte);
+	}
+}
+
+function seeAngriff (angriff, aktiv) {
+	aktiv.innerHTML = "" ;
+	for (const karte of angriff) {
+		hinlegen(aktiv, karte.SpriteKarte);
+	}
+}
+//<<< made by Tim Vogel
+
 //---------------------------------------------------------------------------------------------------------------------------------
 // Geschrieben von André Boden und erweiter von Justin Görtz
 	var Orte = ['Deck', 'Friedhof', 'AngriffPlayer01', 'AngriffPlayer02', 'FeldPlayer01', 'FeldPlayer02', 'Handkarten'] ;
@@ -168,18 +184,28 @@ function legeKarteAngriff (bank, angriff) {// nur für Code im Hintergrund
 }
 
 function rendernP1() {//funktion zum anzeigen der karten
+	feld.innerHTML = "" ;
+	passiv1.innerHTML = "" ;
+	passiv2.innerHTML = "" ;
+	aktiv1.innerHTML = "" ;
+	aktiv2.innerHTML = "" ;
 	seeHand(hand1, feld);
-	hinlegen(passiv1, Leer.SpriteKarte);
-	hinlegen(passiv2, Leer.SpriteKarte);
-	hinlegen(aktiv1, Leer.SpriteKarte);
-	hinlegen(aktiv2, Leer.SpriteKarte);
+	seeBank(bank1, passiv1);
+	seeBank(bank2, passiv2);
+	seeAngriff(angriff1, aktiv1);
+	seeAngriff(angriff2, aktiv2);
 }
 
 function rendernP2() {//funktion zum anzeigen der karten
+	feld.innerHTML = "" ;
+	passiv1.innerHTML = "" ;
+	passiv2.innerHTML = "" ;
+	aktiv1.innerHTML = "" ;
+	aktiv2.innerHTML = "" ;
 	seeHand(hand2, feld);
-	hinlegen(passiv1, Leer.SpriteKarte);
-	hinlegen(passiv2, Leer.SpriteKarte);
-	hinlegen(aktiv1, Leer.SpriteKarte);
-	hinlegen(aktiv2, Leer.SpriteKarte);
+	seeBank(bank1, passiv1);
+	seeBank(bank2, passiv2);
+	seeAngriff(angriff1, aktiv1);
+	seeAngriff(angriff2, aktiv2);
 }
 //<<< made by Tim Vogel
