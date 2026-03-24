@@ -95,26 +95,48 @@ button {
 	height: 40vh ;
 }
 
+#AngriffPlayer01 img {
+	width: 80% ;
+	height: 90% ;
+}
+
 #AngriffPlayer02 {
 	width: 18vw ;
 	height: 40vh ;
+}
+
+#AngriffPlayer02 img {
+	width: 80% ;
+	height: 90% ;
 }
 
 #FeldPlayer01 {
 	width: 60vw ;
 	height: 40vh ;
 }
+
+#FeldPlayer01 img {
+	width: 80% ;
+	height: 90% ;
+}
+
 #FeldPlayer02 {
 	width: 60vw ;
 	height: 40vh ;
 }
+
+#FeldPlayer02 img {
+	width: 80% ;
+	height: 90% ;
+}
+
 #Deck {
 	width: 14vw ;
 	height: 30vh ;
-    border: 2px solid white;
-   	display: flex; 
-    justify-content: center; 
-    align-items: center;
+	border: 2px solid white;
+	display: flex; 
+	justify-content: center; 
+	align-items: center;
 }
 
 #Deck img {
