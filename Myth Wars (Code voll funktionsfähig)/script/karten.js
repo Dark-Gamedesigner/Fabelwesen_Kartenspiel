@@ -52,7 +52,7 @@ var Leer = new Angriffskarte (0,0,"../pictures/Karten_Ruecken.png",0);//liegt am
 var Zerberus = new Angriffskarte (6,5,"../pictures/Zerberus.png",5);
 
 var Minotaure = new Angriffskarte (3,3,"../pictures/Minotaurus.png",5);
-// erweitert by Kruse >
+// erweitert by Kruse---------------------------------------------------------------------------------------------------------------------------------------
 var JackOLantern = new Angriffskarte (2,3,"../pictures/Jack_O_Lantern.png",1);
 
 var Pixi = new Angriffskarte (1,2,"../pictures/Pixie.png",2);
@@ -86,11 +86,11 @@ var Harpyie = new Angriffskarte (2,1,"../pictures/Harpye.png",3);
 var Ratatoskr = new Angriffskarte (1,2,"../pictures/Ratatoskr.png",1);
 
 var Medusa = new Angriffskarte (3,0,"../pictures/Medusa.png",0);
-// erweitert by Kruse <
+// erweitert by Kruse (erweiterung von Zeile 55)---------------------------------------------------------------------------------------------------------------------------------------
 
 // ---------- Götterkarte ----------
 var Zeus = new Götterkarte (8,9,"../pictures/Zeus.png",9,0);
-// erweitert by Justin G.
+// erweitert by Justin Görtz--------------------------------------------------------------------------------------------------------------------------------
 var Thor = new Götterkarte (7,7,"../pictures/Thor.png",10,0);
 
 var Skadi = new Angriffskarte (6,7,"../pictures/Skadi.png",7,0);
@@ -104,9 +104,9 @@ var Aphrodite = new Angriffskarte (6,7,"../pictures/Aphrodite.png",7,0);
 var Artemis = new Angriffskarte (7,7,"../pictures/Artemis.png",9,0);
 
 var Hermes = new Angriffskarte (6,8,"../pictures/Hermes.png",6,0);
-// erweitert by Justin G.
+
 var Hades = new Götterkarte (8,12,"../pictures/Hades.png",4,0);
-// erweitert by Kruse >
+// erweitert by Kruse---------------------------------------------------------------------------------------------------------------------------------------
 var Odin = new Götterkarte (8,10,"../pictures/Odin.png",8,0);
 
 var Frigg = new Götterkarte (6,6,"../pictures/Frigg.png",6,0);
@@ -116,14 +116,14 @@ var Hel = new Götterkarte (7,0,"../pictures/Hela.png",0,0);
 var Freya = new Götterkarte (7,8,"../pictures/Freya.png",8,0);
 
 var Loki = new Götterkarte (6,6,"../pictures/Loki.png",8,0);//muss eventuell Mana wert anpassen wenn Effekte hinzugefügt werden
-// erweitert by Kruse <
+// erweitert by Kruse-----------------------------------------------------------------------------------------------------------------------------------------
 
 // ---------- Unterstützerkarte ----------
 // var ÄpfelDerHesperiden = new Unterstützerkarte (a,b,c);
 
 // ---------- Aktionskarte ----------
 //var OrakelVonDelphi = new Aktionskarte (f,m,l);
-// erweitert by Kruse >
+// erweitert by Kruse (erweiterung von Zeile 119)--------------------------------------------------------------------------------------------------------------
 var Gleipnir = new Aktionskarte (2,0,"../pictures/Gleipnir.png",0);
 
 var Dreizack = new Aktionskarte (3,0,"../pictures/Speer_des_Poseidon.png",0);
