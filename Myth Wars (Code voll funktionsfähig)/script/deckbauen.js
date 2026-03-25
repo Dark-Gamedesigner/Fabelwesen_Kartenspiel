@@ -1,5 +1,5 @@
 //---------------------------------------------------------------------------------
-// Made by Justin Görtz
+// Zeile 3 bis 7 made by Justin Görtz
 'use strict'
 let deck1 ;
 let deck2 ;
