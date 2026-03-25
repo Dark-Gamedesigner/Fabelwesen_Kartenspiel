@@ -15,7 +15,7 @@ var passiv2 = null ;
 var aktiv1 = null ;
 var aktiv2 = null ;
 //<<< made by Tim Vogel
-
+// Zeile 19 bus 23 made by Justin Görtz---------------------------------------------------------------------------------------------------------------------
 function kartendecks() {
 		baueDeck1() ;
 		baueDeck2() ;
@@ -37,7 +37,7 @@ function kartendecks() {
 		/* ---- < von Kruse ----*/
 }
 
-// Made by Justin Görtz
+// made by Justin Görtz-------------------------------------------------------------------------------------------------------------------------------------------------
 // Nordisches Array
 function baueDeck1() {//erweiterung by Vogel
 	let Playerone = [Odin , Thor , Frigg , Hel , Freya , Skadi , Loki ,
@@ -50,8 +50,6 @@ function baueDeck1() {//erweiterung by Vogel
 		}
 }
 
-
-// Made by Justin Görtz
 // Griechisches  Array
 function baueDeck2() {//erweiterung by Vogel
 	let Playertwo = [Zeus , Poseidon , Hera , Hades , Aphrodite , Artemis , Hermes ,
@@ -64,7 +62,7 @@ function baueDeck2() {//erweiterung by Vogel
 		}
 		console.log(Playertwo) ;
 }
-// Made by Justin Görtz
+
 function mischeDeck1() {
 	for(let i = 0; i < deck1.length; i++) {
 		let j = Math.floor(Math.random() * deck1.length) ;
@@ -73,7 +71,7 @@ function mischeDeck1() {
 		deck1[j] = temp ;
 	}
 }
-// Made by Justin Görtz
+
 function mischeDeck2() {
 	for(let i = 0; i < deck2.length; i++) {
 		let j = Math.floor(Math.random() * deck2.length) ;
