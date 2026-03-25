@@ -158,11 +158,11 @@ console.log('Turn');
 
 function legenAufBank () {// nur für Code im Hintergrund
 	if (spieler01.amZug === true) {
-		legeKarteBank(hand1, bank1);// zu finden in deckbauen.js
+		legeKarteBank(hand1, bank1, index);// zu finden in deckbauen.js
 		console.log(bank1);
 		rendernP1();
 	}else if (spieler02.amZug === true) {
-		legeKarteBank(hand2, bank2);
+		legeKarteBank(hand2, bank2, index);
 		console.log(bank2);
 		rendernP2();
 	}

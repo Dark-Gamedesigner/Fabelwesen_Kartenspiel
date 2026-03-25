@@ -110,9 +110,44 @@ function handStart2() {
 
 function seeHand( hand, feld ) {
 	feld.innerHTML = "" ;												// Hand leeren
-	for ( const karte of hand ) {										// Jede Karte durchgehen
-		hinlegen(feld, karte.SpriteKarte);	// Fügt das erstellte ins Feld
+	for ( let i = 0 ; i < hand.length; i++ ) {							// Jede Karte durchgehen
+		const karte = hand[ i ] ;
+		
+		const kartenBox = document.createElement( "div" ) ;				// Erstellt eine Box für jede Karten
+		kartenBox.className = "karte" ;
+		
+		kartenBox.addEventListener( "click", function () {				// Gibt den Boxen eine Klick Funktion
+			if (spieler01.amZug === true) {								// Wenn Spieler 1 am zug ist...
+				legeKarteBank( hand1, bank1, i ) ;						// ... von Hand auf Bank eine Karte durch Klick
+				rendernP1();											// Aktuallisiere die Ansicht
+			} else if (spieler02.amZug === true) {						// Wenn Spieler 2 am zug ist...
+				legeKarteBank( hand2, bank2, i ) ;						// ... von Hand auf Bank eine Karte durch Klick
+				rendernP2();											// Aktuallisiere die Ansicht
+			}
+		} ) ;
+		const bild = document.createElement( "img" ) ;					// Bau eine constante Bild mit dem img
+		bild.src = karte.SpriteKarte ;									// Nim die Sprite Karten
+		bild.alt = "Karte" ;											// Nen es Karte
+		
+		kartenBox.appendChild( bild ) ;									// Gib der Kartenbox das Bild
+		feld.appendChild( kartenBox ) ;									// Und gib dann die kartenBox als Bild aus
 	}						
+}
+
+function legeKarteBank(hand, bank, index) {								// Karte legen
+	if (hand.length <= 0) {												// Hand leer nix
+		return null;
+	}
+	if (bank.length >= 4) {												// Banl voll nix
+		return null;
+	}
+	if (index < 0 || index >= hand.length) {
+		return null;
+	}
+
+	let karte = hand.splice(index, 1)[0];								// Ángeklickte Karte wird aus Hand array gezogen
+	bank.push(karte);													// Karte wird auf Bank geschoben
+	return karte;
 }
 /* ---- < von Kruse ----*/
 
@@ -156,18 +191,18 @@ function ablegen() {
 }
 
 //made by Tim Vogel >>>
-function legeKarteBank (hand, bank) {// nur für Code im Hintergrund
-	if (hand.length <= 0) {
-		return null ;
-	}
-	if (bank.length >= 4) {
-		return null ;
-	}
-	let karte = hand.pop();
-	bank.push( karte );
-	return karte;
-}
-
+//function legeKarteBank (hand, bank) {// nur für Code im Hintergrund
+//	if (hand.length <= 0) {
+//		return null ;
+//	}
+//	if (bank.length >= 4) {
+//		return null ;
+//	}
+//	let karte = hand.pop();
+//	bank.push( karte );
+//	return karte;
+//}
+// Auskommentiert von Kruse da nur die letzte karte ge"pop"t wurde
 function legeKarteAngriff (bank, angriff) {// nur für Code im Hintergrund
 	angriff.pop(Leer);
 	if (bank.length <= 0) {
